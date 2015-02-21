@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comment Page</title>
+<meta name="description" content="CSS Selectors">
+<meta name="author" content="me">
+
+<link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+
+  <form action="form.html" method="POST">
+
+  <fieldset>
+    
+    <legend>Tell us about yourself!</legend>
+    <label for="first-name"> Enter your first name:</label>
+    <input id="first-name" type="text" name="first-name" class="input-buffer">
+
+    <label for="last-name"> Enter your last name:</label>
+    <input id="las-name" type="text" name="last-name" class="input-buffer">
+    
+    <label for="email">Your email address:</label>
+    <input id="email" type="text" name="email" class="input-buffer">
+
+  </fieldset>
+
+  <fieldset>
+    <label for="user_comments"> Comments</label>
+    <textarea id="comments" name="comments" class="input-buffer"></textarea>
+  </fieldset>
+
+  <label for="feedback-type">Comment type</label>
+  <select id="feedback-type" name="type" class="input-buffer">
+    <option>Statements</options>
+    <option>Excitement</option>
+    <option>Areas for improvement</option>
+  </select>
+
+  <fieldset>
+    <legend>Which product are your using?</legend>
+    <input type="radio" name="product-type" value="word">
+    Word
+    <input type="radio" name="product-type" value="excel">
+    Excel
+    <input type="radio" name="product-type" value="powerpoint">
+    PowerPoint
+  </fieldset>
+
+ <fieldset>
+    <legend>What type of customer are you?</legend>
+    <input type="checkbox" name="Student" value="student">
+    Student
+    <input type="checkbox" name="Advanced User" value="adv_user">
+    Advanced User
+    <input type="checkbox" name="Rabbit" value="rabbit">
+    Rabbit
+  </fieldset>
+
+  <button type="submit">Submit Comments</button>
+  </form>
+
+</body>
+</html>

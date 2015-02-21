@@ -1,0 +1,65 @@
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comment Page</title>
+<meta name="description" content="CSS Selectors">
+<meta name="author" content="me">
+
+<link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+	<div class="container">
+  <form action="form.html" method="POST">
+
+  <fieldset id="basicinfo">
+    
+    <legend id="question1">Want to get to know me better?</legend>
+    <label for="first-name"> First Name:</label>
+    <input id="first-name" type="text" name="first-name" class="input-buffer">
+    <br>
+    <label for="last-name"> Last Name:</label>
+    <input id="last-name" type="text" name="last-name" class="input-buffer">
+    <br>
+    <label for="email">Your email address:</label>
+    <input id="email" type="text" name="email" class="input-buffer">
+    <br>
+  </fieldset>
+
+  <fieldset id="comments">
+    <label for="user_comments" id="comhead"> Comments</label>
+    <textarea id="comments" name="comments" class="input-buffer"></textarea>
+  </fieldset>
+
+ <fieldset id="category">
+    <legend id="question2">What can I do to help you?</legend>
+    <input type="checkbox" name="build" value="student">
+    App Development
+    <input type="checkbox" name="conversation" value="adv_user">
+    Web Design
+  </fieldset>
+
+<div class="centerbutton">
+  <button 
+  id="submit" 
+  type="submit" 
+  style="margin-left:auto; 
+  margin-right:auto; 
+  display:block;
+  margin-top:10%;
+  margin-bottom:0%">Submit Comments</button>
+</div>
+
+  </form>
+</container>
+</body>
+<footer id="footer">
+	
+	<a href="http://www.facebook.com/rittycheriah"><img src="facebook.png" alt="Twitter Logo" class="socialicon"></a>
+
+	<a href="http://www.twitter.com/rainuitty"><img src="twitter.png" alt="Twitter Logo" class="socialicon"></a>
+
+</footer>
+</html>

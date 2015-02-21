@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+   <meta charset="utf-8">  
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Ex. for boot">
+   <meta name="author" content="RSI">
+
+ <title>My First Bootstrap Application</title>
+ 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+ 
+ </head>
+
+ <body>
+    <div class="jumbotron">
+      <div class="container">
+          <h1>What about you?</h1>
+          <p>I'd love to know more about you and what I can for you</p>
+      </div>
+    </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="http://www.facebook.com/rittycheriah">Facebook<span class="sr-only">(current)</span></a></li>
+        <li><a href="http://www.twitter.com/rainuitty">Twitter</a></li>
+        <li class="dropdown">
+          <a href="###" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Other Pages<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<form>
+  <div class="form-group">
+    <label for="Name">Your Name</label>
+    <input type="name" class="form-control" placeholder="Your name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+   <label for="comments">Comments/Questions</label>
+  <textarea class="form-control" rows="3" placeholder="Tell me how I can help (i.e. buy you coffee, listen to your needs, or just be a good friend)"></textarea>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> I'd like an expedited response
+    </label>
+  </div>
+</form>
+<p>
+  <button type="button" class="btn btn-primary btn-lg">Submit</button>
+  <button type="button" class="btn btn-default btn-lg">Go to Home Page</button>
+</p>
+</form>
+
+ 	<script src="js/jquery.js"></script>
+ 	<script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
+ 
