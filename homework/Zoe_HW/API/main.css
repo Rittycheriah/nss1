@@ -1,3 +1,32 @@
 body {
+  size: 100%;
   background: linear-gradient(blue, white);
+  background-repeat: no-repeat;
+  font-family: 'Slabo 27px', serif;
+}
+
+label {
+  width: 4em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+#text {
+  font-weight: bold;
+}
+
+fieldset {
+  border: 0;
+}
+
+#daButton {
+   background-color:white;
+   color: blue;
+   border: none;
+   moz-border-radius: 25px;
+   -webkit-border-radius: 25px;
+   padding: 5px 30px 5px 30px;
+   text-shadow: none;
 }
