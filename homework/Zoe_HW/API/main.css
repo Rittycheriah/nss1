@@ -5,6 +5,10 @@ body {
   font-family: 'Slabo 27px', serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 label {
   width: 4em;
   float: left;
@@ -29,4 +33,16 @@ fieldset {
    -webkit-border-radius: 25px;
    padding: 5px 30px 5px 30px;
    text-shadow: none;
+}
+
+#resultdiv{
+  border: 5em;
+}
+
+#resultdiv2{
+  border: 5em;
+}
+
+#resultdiv3{
+  border: 5em;
 }

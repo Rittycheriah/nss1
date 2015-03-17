@@ -1,38 +1,42 @@
-"use strict";
 
-//function for getting API results
-function getWeather() {
+//intialize function once click is pressed
+ $("#daButton").click(function getWeather() {
+  event.preventDefault();
+//Getting zip to autofill
+$.getJSON("http://ip-api.com/json", function( json ) {
+  console.log( "JSON Data: " + json.responseJSON);
+ });
 
-//results returning as an array
-  var resultsReturn = []
+//Zipcode must be "get" from HTML
+ var zip = $("textarea#zip").val();
+  console.log(zip);
 
- //getting the input from textarea
-  // $("button#daButton").click(function () {
-  //     var zipCode = "37209";
-  //     //$("textarea#zip").val('37209');
-  //  })
+//Define what the results will go in
+  var time;
+  var degrees;
+  var location;
 
-//API gets from zipCode
+// Ajax callback to API to get data back
    $.ajax({
-       url: "http://api.wunderground.com/api/5d0612849c444de1/conditions/" + zipCode +".json",
+       //Zipcode concatenated with API URL
+       url: "http://api.wunderground.com/api/5d0612849c444de1/conditions/q/" + zip + ".json",
        dataType: "jsonp",
        success : function(data){
          console.log(data);
-         //Return results from API 
-         var time = console.log(data.current_observation.observation_time_rfc822);
-         var degrees = console.log(data.current_observation.temp_f);
-         var location = console.log("add zip");
-         resultsReturn = time, degrees, location;
-         results.innerHTML = resultsReturn;
-         console.log(resultsReturn)
+
+          //Specify which portions of data to use
+         console.log(data.current_observation.observation_time_rfc822);
+         console.log(data.current_observation.temp_f);
+         console.log(zip);
+
+         //writing those elements to the div
+         $('#resultdiv').append(data.current_observation.observation_time_rfc822);
+         $('#resultdiv2').append(data.current_observation.temp_f + "  degrees");
+         $('#resultdiv3').append(zip);
        } 
- });
-
-//writing to div
-document.getElementById('resultdiv').innerHTML= (time, degrees, location);
-
-}
-
-$(document).ready(function() {
-    console.log(getWeather());
+    });
+  $('#resultdiv').html(time, degrees, location);
 });
+// Write to div and display data from API 
+
+
