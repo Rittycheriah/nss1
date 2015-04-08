@@ -1,0 +1,35 @@
+* {
+	font-family: 'Lobster', cursive !important;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: radial-gradient(ellipse farthest-corner at 45px 45px , #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
+  background-size: 2000px;
+}
+
+h1 {
+ font-family: 'Lobster', cursive;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#title {
+  width: 200px;
+  height: 30px;
+}
+
+#description {
+  width: 200px;
+}
+
+#datePicker {
+  width: 200px;
+}
+
+#submitbutton {
+  margin: 20px;
+}
