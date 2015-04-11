@@ -10,9 +10,6 @@
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-    <!-- My Customer JS -->
-    <script src="/javascripts/myscript.js"></script>
-  
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
@@ -27,7 +24,7 @@
     <h1><%= title %></h1>
     
     <p><%= bodyt %></p>
-  <form id="main" method= "post">
+  <form id="main" method="POST" action="/items">
     <label for="title"> Title(required): </label>
     <textarea class= form-control id="title" name="titletext" required></textarea>
     <br>
@@ -36,51 +33,75 @@
     <textarea class= form-control id="description" name="destext" required></textarea>
     <br>
 
-    <div class="btn-group">
-      <button type="button" class="btn btn-info">Priority Level</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Top #1</a></li>
-        <li><a href="#">#2</a></li>
-        <li><a href="#">#3</a></li>
-        <li><a href="#">#4</a></li>
-        <li><a href="#">Low #5</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-      </ul>
-    </div>
+ <label for="priority"> Priority: </label>
+ <select class="form-control" id="priority" name="priority">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
 
     
   <hr>
     <label for="duedate"> Due Date: </label>
 
-   
-            <div class="form-group" id="datePicker" name="datePicker">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
-    </div>
-</div>
+        <select class="form-control" id="monthDue" name="monthDue">
+          <option>1 - January</option>
+          <option>2 - February</option>
+          <option>3 - March</option>
+          <option>4 - April</option>
+          <option>5 - May</option>
+          <option>6 - June</option>
+          <option>7 - July</option>
+          <option>8 - August</option>
+          <option>9 - September</option>
+          <option>10 - October</option>
+          <option>11 - November</option>
+          <option>12 - December</option>
+        </select>
 
+        <select class="form-control" id="dayDue" name="dayDue">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+          <option>21</option>
+          <option>22</option>
+          <option>23</option>
+          <option>24</option>
+          <option>25</option>
+          <option>26</option>
+          <option>27</option>
+          <option>28</option>
+          <option>29</option>
+          <option>30</option>
+          <option>31</option>
+        </select>
     
 	<input type="checkbox" name="complete" value="donezo"> 
   <label> Completed? </label>
 <br>
 
-	<input class= btn btn-default id="submitbutton" type="submit" value="Submit"> 
+	<input class= btn btn-default id="submitbutton" type="submit" value="Submit"> </input>
+</form> 
   </body>
-</form>
 
     <!-- Date Picker -->
 
@@ -91,4 +112,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+     <!-- My Customer JS -->
+    <!-- Validate -->
+    <script src="/javascripts/validate.js"></script>
+    <!--     To JSON -->
+    <script src="/javascripts/toJSON.js"></script>
+    
+  
 </html>

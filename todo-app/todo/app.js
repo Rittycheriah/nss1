@@ -43,6 +43,14 @@ var users = require('./routes/users');
 
 var app = express();
 
+app.post('/items', function (req, res) {
+  res.send('To Do Item Received!');
+});
+
+app.post('/todo', function (req, res) {
+  console.log(req);
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

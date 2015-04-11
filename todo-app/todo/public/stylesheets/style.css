@@ -26,8 +26,18 @@ a {
   width: 200px;
 }
 
-#datePicker {
+#priority {
   width: 200px;
+}
+
+#monthDue{
+  width: 200px;
+  margin: 20px;
+}
+
+#dayDue {
+  width: 200px;
+  margin: 20px;
 }
 
 #submitbutton {
