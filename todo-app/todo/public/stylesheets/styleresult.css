@@ -1,0 +1,20 @@
+
+body {
+    background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
+    font-size: 50px !important;
+}
+
+h1 {
+    font-family: Arial;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+ul li {
+	font-family: 'Amatic SC', cursive !important;
+    list-style: none;
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
