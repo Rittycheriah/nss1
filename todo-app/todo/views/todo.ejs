@@ -25,16 +25,41 @@
 
 <body>
 <h1> ALL THE TASKS!<h1>
-	<ul>
-      <% tasks.forEach(function(task){ %>
+<h2 id="incomplete"> Incomplete Tasks</h2> 
+<h2 id="completed"> Completed Tasks </h2>
+
+<% tasks.forEach(function(task) { %> 
+<div id="holdleftparent"> 
+  <% if (task.completed != true) { %>
+    <div id="todo_<%= task._id %>" class="goleft">
       <li><%= task.title  %></li>
+      <li><%= task.description %></li>
       <li><%= task.due_date %></li>
       <li><%= task.priority  %></li>
-      <li>	<input type="checkbox" name="complete" value="donezo"> 
-  <label> Completed? </label></li>
+      <li>  <input type="checkbox" name="complete" value="donezo"> 
+      <label> Completed? </label></li>
+      <li>  <input id="<%= task._id %>" type="submit" class="delete" name="delete" value="delete"> </li>
+      <li>  <input id="<%= task._id %>" type="submit" class="edit" name="edit" value="edit"> </li>
       <hr>
-      <%  }) %>
-    </ul>
+    </div>
+</div>
+<% } else { %>
+<div id="holdrightparent">
+  <div id="todo_<%= task._id %>" class="goright">
+    <li><%= task.title  %></li>
+    <li><%= task.description  %></li>
+    <li><%= task.due_date %></li>
+    <li><%= task.priority  %></li>
+    <li>  <input type="checkbox" name="complete" value="donezo" checked> 
+    <label> Completed? </label></li>
+    <li>  <input id="<%= task._id %>" type="submit" class="delete" name="delete" value="delete"> </li>
+    <li>  <input id="<%= task._id %>" type="submit" class="edit" name="edit" value="edit"> </li>
+    <hr>
+  </div>
+</div>
+  <% } %>
+<% }); %>
 
+   <script src="/javascripts/toDoHandler.js"></script>
 </body>
 </html>

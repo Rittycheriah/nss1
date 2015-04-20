@@ -22,31 +22,51 @@
   </head>
   <body>
     <h1><%= title %></h1>
+
+    <%
+      var month= ('0' + todo.due_date.getMonth()).slice(-2);
+      var day = ('0' + todo.due_date.getDate()).slice(-2);
+      var fulldate = "";
+      if (todo.title) {
+       fulldate =todo.due_date.getFullYear() + "-" + month + "-" + day ;
+      } 
+    %>
     
     <p><%= bodyt %></p>
   <form id="main" method="POST" action="/todo">
     <label for="title"> Title(required): </label>
-    <textarea class= form-control id="title" name="titletext" type="text"></textarea>
+    <input type="hidden" id="_id" value=<%= todo._id%> > 
+    <textarea class= form-control id="title" name="titletext" type="text"> <%= todo.title %></textarea>
     <br>
     <!-- required -->
 
     <label for="description"> Description(required): </label>
-    <textarea class= form-control id="description" name="destext" type="text"></textarea>
+    <textarea class= form-control id="description" name="destext" type="text"> <%= todo.description %> </textarea>
     <br>
 <!--     required
  -->
  <label for="priority"> Priority: </label>
- <select class="form-control" id="priority" name="priority" type="number">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
+ <select class="form-control" id="priority" name="priority" type="number" selected value='<%= todo.priority %>'>
+  <option <% if (todo.priority === 1) {
+  %> selected <%
+  }%> > 1 </option>
+  <option <% if (todo.priority === 2) {
+  %> selected <%
+  }%> > 2 </option>
+  <option <% if (todo.priority === 3) {
+  %> selected <%
+  }%> > 3 </option>
+  <option <% if (todo.priority === 4) {
+  %> selected <%
+  }%> > 4 </option>
+  <option <% if (todo.priority === 5) {
+  %> selected <%
+  }%> > 5 </option>
 </select>
     
   <hr>
     <label for="duedate"> Due Date: </label>
-     <input type="date" name="due_date">
+     <input type="date" name="due_date" value=<%= fulldate %>>
     
 	<input type="checkbox" name="complete" value="true"> 
   <label> Completed? </label>

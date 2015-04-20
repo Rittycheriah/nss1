@@ -1,17 +1,40 @@
 
 body {
     background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
-    font-size: 50px !important;
+    font-size: 25px !important;
 }
 
 h1 {
-    font-family: Arial;
-    margin: 0 auto;
-    text-align: center;
+  font-family: Arial;
+  margin: 0 auto;
+  text-align: center;
 }
 
+#incomplete {
+  float: left;
+  margin-left: 200px;
+}
 
-ul li {
+#completed {
+  float: right;
+  margin-right: 200px;
+}
+
+#holdleftparent {
+  width: 50%;
+}
+
+.goleft {
+  float: left;
+  font-weight: bold;
+  color: red;
+}
+
+.goright {
+  float: right;
+}
+
+.goleft li {
 	font-family: 'Amatic SC', cursive !important;
     list-style: none;
     display: inline;
