@@ -69,12 +69,13 @@ router.get('/', function(req, res, next) {
 
 /*Post form */
 router.post('/', function(req, res, next) {
+  console.log(req.body);
   //editing an existing item
-  if (req.body._id != "") {
-
+  if (req.body.db_id !== "") {
     //Find It
-    Todo.findOne({ _id : req.body._id}, function(err, foundTodo2) {
-    var foundTodo2 = req.body;
+    Todo.findOne({ _id : req.body.db_id}, function(err, foundTodo) {
+      console.log(req.body);
+   
       if (err) {
         console.log(err);
         res.render("error", {
@@ -85,15 +86,15 @@ router.post('/', function(req, res, next) {
           message: "Could not find that task."
         });
       } else {
-        console.log(foundTodo2);
-        foundTodo2.title = req.body.titletext;
-        foundTodo2.description = req.body.destext;
-        foundTodo2.priority = req.body.priority;
-        foundTodo2.due_date = req.body.due_date;
-        foundTodo2.complete = (req.body.complete) ? req.body.complete : false;
+        console.log(foundTodo);
+        foundTodo.title = req.body.titletext;
+        foundTodo.description = req.body.destext;
+        foundTodo.priority = req.body.priority;
+        foundTodo.due_date = req.body.due_date;
+        foundTodo.complete = (req.body.complete) ? req.body.complete : false;
 
     //Save the updated item. 
-    foundTodo2.save(function(err, newOne) {
+    foundTodo.save(function(err, newOne) {
       if (err) {
         res.render("error", {
           error: {
@@ -116,8 +117,8 @@ router.post('/', function(req, res, next) {
       due_date: req.body.due_date,
       title: req.body.titletext,
       description: req.body.destext,
-      priority: req.body.priority
-        //complete: false
+      priority: req.body.priority,
+      complete: req.body.complete
     }).save(function(err, task) {
       console.log('saved');
       if (err) {
@@ -128,8 +129,9 @@ router.post('/', function(req, res, next) {
           }
         });
         console.log(task);
-      }
+      } else {
       res.redirect('/todo');
+    }
     });
   }
 });

@@ -16,7 +16,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { 
   	title: 'To Do List App',  
     bodyt: 'Enter Here',
-    todo: {}
+    todo: {
+    	due_date: new Date,
+      title: '',
+      description: '',
+      priority: '',
+      completed: false
+    }
   });
 });
 

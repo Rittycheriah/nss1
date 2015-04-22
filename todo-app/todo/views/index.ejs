@@ -35,7 +35,7 @@
     <p><%= bodyt %></p>
   <form id="main" method="POST" action="/todo">
     <label for="title"> Title(required): </label>
-    <input type="hidden" id="_id" value=<%= todo._id%> > 
+    <input type="hidden" id="db_id" name= "db_id" value=<%= todo._id%> > 
     <textarea class= form-control id="title" name="titletext" type="text"> <%= todo.title %></textarea>
     <br>
     <!-- required -->
