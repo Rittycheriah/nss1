@@ -1,0 +1,230 @@
+div {
+  border: 1px solid black;
+}
+/*www.youtube.com/watch?v=5hARDXYz2io*/
+/*Dark Teal: #69C4CC
+Light Blue Text: #D5F1F0
+Medium Blue Text: #2A959E
+Light Teal: #CFEFEE
+Bright Pink: #E9168C
+Light Pink: #F3CECD
+Bright Purple: #6F308B
+Dark Purple: #6F1549
+Green (auction page form): #edf9d3
+Green (auction page text color): #8db639*/
+/*div {
+    border: 1px solid black;
+}*/
+/*Font*/
+
+body {
+  font-family: 'Corben', cursive;
+  font-weight: bold;
+}
+/*Color*/
+
+.white {
+  background-color: #FFFFFF;
+}
+
+.yuck-yellow {
+  background-color: #EDF9D3;
+}
+
+.green-text {
+  color: #8db639;
+}
+
+.greener-text {
+  color: #edf9d3;
+}
+
+.light-blue-text {
+  color: #D5F1F0;
+}
+
+.medium-blue-text {
+  color: #2A959E;
+}
+
+.bright-purple {
+  background-color:
+}
+
+.dark-purple {
+  background-color: #6F1549;
+}
+
+.green {
+  background-color: #edf9d3;
+}
+
+.bright-pink {
+  background-color: #E9168C;
+}
+
+.light-pink {
+  background-color: #F3CECD;
+}
+
+.dark-teal {
+  background-color: #69C4CC;
+}
+
+.light-teal {
+  background-color: #CFEFEE;
+}
+/*div heights*/
+
+.height44 {
+  height: 44px;
+}
+
+.height158 {
+  height: 200px;
+}
+
+.height500 {
+  height: 500px;
+}
+
+.height875 {
+  height: 875px;
+}
+
+.height22 {
+  height: 22px;
+}
+
+.height106 {
+  height: 106px;
+}
+
+.height50 {
+  height: 50px;
+}
+/*buttons*/
+
+.btn {
+  border-radius: 24px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #FFF;
+}
+
+.btn-bright-pink {
+  background: #E9168C;
+  border-color: #E9168C;
+}
+
+.btn-bright-pink:hover {
+  background: #E9168C;
+  border-color: #E9168C;
+}
+
+.btn-dark-purple {
+  background: #6F308C;
+  border-color: #6F308C;
+}
+
+.btn-dark-purple:hover {
+  background: #6F308C;
+  border-color: #6F308C;
+}
+
+.btn-green {
+  background: #8DB639;
+  border-color: #8DB639;
+}
+
+.btn-green:hover {
+  background: #8DB639;
+  border-color: #8DB639;
+}
+
+.btn-teal {
+  background: #78CBD0;
+  border-color: #78CBD0;
+}
+
+.btn-teal:hover {
+  background: #78CBD0;
+  border-color: #78CBD0;
+}
+/*center navbar content*/
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+/*padding*/
+
+.padding-left-right-10x {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.padding-top-125px {
+  padding-top: 125px;
+}
+
+.padding-top-50px {
+  padding-top: 50px;
+}
+
+.padding-bottom-50px {
+  padding-bottom: 50px;
+}
+
+.padding-top-25px {
+  padding-top: 25px;
+}
+
+.padding-bottom-25px {
+  padding-bottom: 25px;
+}
+
+.padding-top-10px {
+  padding-top: 10px;
+}
+
+.dots {
+  margin: 0;
+  background: url("../images/homepage/dotted_line_44x9.png") repeat-x;
+}
+
+.logo-tagline {
+  position: relative;
+  bottom: 55px;
+}
+
+a.btn {
+  border-radius: 50px;
+  text-align: center;
+}
+
+#topofbuttons {
+  height: 60px;
+}
+/*rounded borders*/
+
+.rounded-border-top-left {
+  border-top-left-radius: 50px;
+}
+
+.rounded-border-top-right {
+  border-top-right-radius: 50px;
+}
+
+.rounded-border-bottom-left {
+  border-bottom-left-radius: 50px;
+}
+
+.rounded-border-bottom-right {
+  border-bottom-right-radius: 50px;
+}
