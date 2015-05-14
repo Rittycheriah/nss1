@@ -1,68 +1,66 @@
-doctype html
-html
-  head
-    title= title
 
-    //****** BOOTSTRAP
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+head
+  title= title
 
-    //***** CUSTOM STYLESHEET
-    link(rel='stylesheet', href='/stylesheets/style.css')
+  //****** BOOTSTRAP
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
 
-    //****** GOOGLE FONTS LINK
-    link(href='http://fonts.googleapis.com/css?family=Corben:400,700', rel='stylesheet', type='text/css')
+  //***** CUSTOM STYLESHEET
+  link(rel='stylesheet', href='/stylesheets/style.css')
 
-    //***** JQUERY
-    script(src='//code.jquery.com/jquery-1.11.2.min.js')
+  //****** GOOGLE FONTS LINK
+  link(href='http://fonts.googleapis.com/css?family=Corben:400,700', rel='stylesheet', type='text/css')
 
-    //*** MORE BOOTSTRAP (JS)
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
-  body
+  //***** JQUERY
+  script(src='//code.jquery.com/jquery-1.11.2.min.js')
 
-     .container 
-    .row.signin
-      .col-md-2.light-teal.height44
-      .col-md-8.light-teal.height44
-        .row
-          .col-md-3
-          .col-md-3
-          .col-md-3
-          .col-md-3
-            .user-links Sign In | Sign Up
-      .col-md-2.light-teal.height44
-    .row.light-teal
-      .col-md-2.light-teal.height158
-      .col-md-4.height158.padding-top-50px.buttons.rounded-border-top-left.white
-        img(src='/images/images/savings-multiplied-logo.png').img-responsive.logo-tagline
-      .col-md-4.height158.buttons.rounded-border-top-right.white
-        .row#topofbuttons
-        .row
-        a.btn.btn-teal.move-btn-right.mybtn About
-        a.btn.btn-green Contact
-        a.btn.btn-dark-purple Blog
-        a.btn.btn-bright-pink Press
-        img(src='/images/images/tagline.png').img-responsive
-        .row
-      .col-md-2.light-teal.height158
-    .row 
-      .col-md-12.light-pink
-        .col-md-2.light-pink.height50
-        ul.nav.navbar-nav.center-nav.light-pink
-          li 
-            a(href='#') Buy
-            span.sr-only (current)
-          li
-            a(href='#') Sell
-          li
-            a(href='#') How it Works
-          li 
-            a(href='#') Links
-          li 
-            a(href='#') Community
-          li 
-            form.navbar-form(role='search')
-              .form-group.has-feedback
-                i.glyphicon.glyphicon-search.form-control-feedback
-                input.form-control.padding-left-right10x(type='text', placeholder='Search')
-  block content1
+  //*** MORE BOOTSTRAP (JS)
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+body
+
+   .container 
+  .row.signin
+    .col-md-2.light-teal.height44
+    .col-md-8.light-teal.height44
+      .row
+        .col-md-3
+        .col-md-3
+        .col-md-3
+        .col-md-3
+          .user-links Sign In | Sign Up
+    .col-md-2.light-teal.height44
+  .row.light-teal
+    .col-md-2.light-teal.height158
+    .col-md-4.height158.padding-top-50px.buttons.rounded-border-top-left.white
+      img(src='/images/images/savings-multiplied-logo.png').img-responsive.logo-tagline
+    .col-md-4.height158.buttons.rounded-border-top-right.white
+      .row#topofbuttons
+      .row
+      a.btn.btn-teal.move-btn-right.mybtn About
+      a.btn.btn-green Contact
+      a.btn.btn-dark-purple Blog
+      a.btn.btn-bright-pink Press
+      img(src='/images/images/tagline.png').img-responsive
+      .row
+    .col-md-2.light-teal.height158
+  .row 
+    .col-md-12.light-pink
+      .col-md-2.light-pink.height50
+      ul.nav.navbar-nav.center-nav.light-pink
+        li 
+          a(href='/auction') Buy
+          span.sr-only (current)
+        li
+          a(href='#') Sell
+        li
+          a(href='#') How it Works
+        li 
+          a(href='#') Links
+        li 
+          a(href='#') Community
+        li 
+          form.navbar-form(role='search')
+            .form-group.has-feedback
+              i.glyphicon.glyphicon-search.form-control-feedback
+              input.form-control.padding-left-right10x(type='text', placeholder='Search')
