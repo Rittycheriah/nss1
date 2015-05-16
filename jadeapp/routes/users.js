@@ -39,6 +39,12 @@ app.post('/register', function(req, res) {
 	});
 });
 
+//Get to Login
+app.get("/login", function (req, res) {
+	console.log('hit login');
+  res.render("login");
+});
+
 //Handling a login action 
 app.post('/login', function(){
 	console.log('Node handling login route');
