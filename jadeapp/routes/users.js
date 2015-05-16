@@ -30,21 +30,21 @@ app.post('/register', function(req, res) {
 	console.log('here is the new user', newUser)
 
 	newUser.save(function(err, user) {
+		console.log('going to the redirect');
 		if(err) {
 			sendError(req, res, err, 'Failed to register user');
 		} else {
-			console.log('going to the redirect');
-			res.redirect('/index');
+			res.redirect('/');
 		}
 	});
 });
 
-// //Handling a login action 
-// app.post('/login', function(){
-// 	console.log('Node handling login route');
+//Handling a login action 
+app.post('/login', function(){
+	console.log('Node handling login route');
 
-// 	//Try to log user w/ given info
-// 	UserController.login(req.body.username, req.body.password)
-// });
+	//Try to log user w/ given info
+	UserController.login(req.body.username, req.body.password)
+});
 
 module.exports = app;

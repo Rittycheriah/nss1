@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var db = require('./db');
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/auction', auction);
