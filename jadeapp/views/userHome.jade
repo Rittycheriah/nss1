@@ -10,13 +10,28 @@ html
       .col-md-6.height500
         h1 Welcome #{user}
         h6 You have #{itemLength} auction items total.
-
+        br
+        p Here Are Your Items In Detail: 
+          each auctionItem in auctionItems
+            div.todo-item(id='auction_#{auctionItem._id}')
+              ul 
+                li Title: #{auctionItem.title}
+                li Type: #{auctionItem.type}
+                li Size: #{auctionItem.size}
+                li Season: #{auctionItem.season}
+                li Condition: #{auctionItem.condition}
+                li Image URL: #{auctionItem.image}
+                li Brand: #{auctionItem.brand}
+                button.btn.btn-info.dropdown-toggle.editButton(id='#{auctionItem._id}', type='button', data-toggle='dropdown', aria-expanded='false') Edit
+                  a(href='/auction/delete')
+                button.btn.btn-danger.dropdown-toggle.deleteButton(id='#{auctionItem._id}', type='button', data-toggle='dropdown', aria-expanded='false') Delete
+                  a(href='/auction/:id')
+                br
       .col-md-1.height500
       .col-md-2.dark-teal.height500
     .row
       .col-md-2.dark-teal.height106
       .col-md-8.height106.rounded-border-bottom-right.rounded-border-bottom-left.white
       .col-md-2.dark-teal.height106
-
 
   include ./layoutbottom.jade

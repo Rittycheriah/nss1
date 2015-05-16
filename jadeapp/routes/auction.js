@@ -63,11 +63,74 @@ router.get('/createItem', function (req, res, next) {
     res.redirect("/users/login");
   }
 
-  res.render('createItem',{});
+  res.render('createItem',{
+    auctionItem : {
+      title: '', 
+      type: '', 
+      size: '', 
+      season: '', 
+      condition: '', 
+      image: '', 
+      brand: ''
+    }   
+  });
 });
 
-//POST create item page 
+//Get to :id = for editting
+router.get('/:id', function (req, res) {
+
+  // Is the user logged in?
+  if (UserController.getCurrentUser() === null) {
+    res.redirect("/users/login");
+  }
+
+  // Find was successful 
+  auctionModel.findOne({_id: req.params.id}, function (err, item) {
+
+    // Was there an error when retrieving
+
+    if (err) {
+      sendError(req, res, err, 'Could not find auction item with that id');
+    } else {
+      res.render('createItem', {
+        auctionItem : item
+      });
+    }
+  })
+})
+
+//POST create item page OR edit page
 router.post('/createItem', function (req, res, next) {
+
+  //User is editing an existing item
+  if (req.body.db_id !== "") {
+
+    //Find it
+    auctionModel.findOne({ _id: req.body.db_id}, function (err, foundAuction) {
+
+      if (err) {
+        sendError(req, res, err, 'Could not find that task');
+      } else {
+        foundAuction.title = req.body.title;
+        foundAuction.type = req.body.type;
+        foundAuction.size = req.body.size;
+        foundAuction.season = req.body.season;
+        foundAuction.condition = req.body.condition;
+        foundAuction.image = req.body.image;
+        foundAuction.brand = req.body.brand;
+      }
+
+      //Save it 
+      foundAuction.save(function (err, newOne) {
+        if (err) {
+          sendError(req, res, err, "could not save task with updated info");
+        } else {
+          res.redirect('/auction/profile');
+        }
+      });
+    });
+
+  } else {
 	console.log('this is the req', req.body);
 	//Who is the user? 
 	var theUser = UserController.getCurrentUser();
@@ -82,12 +145,32 @@ router.post('/createItem', function (req, res, next) {
 
   var myAuctionItem = new auctionModel(theFormPostData);
 
-  myAuctionItem.save(function (err, todo) {
-  	if (err) {
-      sendError(req, res, err, 'Failed to save task');
-  	} else {
-  		res.redirect('/auction');
-  	}
+    myAuctionItem.save(function (err, todo) {
+    	if (err) {
+        sendError(req, res, err, 'Failed to save task');
+    	} else {
+    		res.redirect('/auction/profile');
+    	}
+    });
+  }
+});
+
+
+
+//Handling a delete to auction
+router.delete('/', function (req, res) {
+  auctionModel.find({ _id: req.body.auction_id })
+      .remove(function (err) {
+      console.log('removed item');
+      console.log(req.body);
+    // Was there an error when removing?
+    if (err) {
+      sendError(req, res, err, "Could not delete the task");
+
+    // Delete was successful
+    } else {
+      res.send("SUCCESS");
+    }
   });
 });
 
