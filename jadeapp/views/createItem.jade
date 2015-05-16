@@ -1,0 +1,59 @@
+doctype html
+html
+
+  include ./layouttop.jade
+
+  .container
+    .row 
+      .col-md-2.dark-teal.height500
+      .col-md-1.height500
+      .col-md-6.height500
+        h1 Create an Item Below
+
+        fieldset
+          form#createItem(method='POST', action='/auction/createItem')
+            .formfield
+              .input-group
+                input#inputText.form-control(type='text', name='title', placeholder='title', aria-describedby='sizing-addon1')
+            br          
+            .formfield
+              .input-group
+                input#inputText.form-control(type='type', name='type', placeholder='type', aria-describedby='sizing-addon1')
+            br
+            .formfield
+              .input-group
+                input#inputText.form-control(
+                type='size',name='size', placeholder='size', aria-describedby='sizing-addon1')
+            br
+            .formfield
+              .input-group
+                input#inputText.form-control(
+                type='season', name='season',
+                placeholder='season', aria-describedby='sizing-addon1')
+            br
+            .formfield
+              .input-group
+                input#inputText.form-control(
+                type='condition', name='condition', placeholder='condition', aria-describedby='sizing-addon1')
+            br
+            .formfield
+              .input-group
+                input#inputText.form-control(
+                type='text', name='image', placeholder='image url', aria-describedby='sizing-addon1')
+            br
+            .formfield
+              .input-group
+                input#inputText.form-control(
+                type='brand', name='brand',
+                placeholder='brand', aria-describedby='sizing-addon1')
+            br
+            input.submitbutton(type='submit', value='Sell It!')
+      .col-md-1.height500
+      .col-md-2.dark-teal.height500
+    .row
+      .col-md-2.dark-teal.height106
+      .col-md-8.height106.rounded-border-bottom-right.rounded-border-bottom-left.white
+      .col-md-2.dark-teal.height106
+
+
+  include ./layoutbottom.jade

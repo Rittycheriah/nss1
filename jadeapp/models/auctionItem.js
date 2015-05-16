@@ -1,11 +1,16 @@
-// auction item schema will be defined later
+// auction item schema
 
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-// var userSchema = mongoose.Schema({
-//     usernam: {type: String, required: true, default: ''},
-//     password: {type: String, required: true, default: ''}
-// });
-// var UserModel = require("../models/user");
+var auctionItem = mongoose.Schema({
+	title: {type: String, required: true, default: ''},
+  type: {type: String, required: true, default: ''},
+  size: {type: String, required: true, default: ''}, 
+  season: {type: String, required: true, default: ''},
+  condition: {type: String, required: true, default: ''},
+  brand: {type: String, required: true, default: ''}
+});
 
-// module.exports = User;
+var AuctionModel = require("../models/user");
+
+module.exports = auctionItem;
