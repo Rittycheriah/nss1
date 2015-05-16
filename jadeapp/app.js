@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var auction = require('./routes/auction')
+var auction = require('./routes/auction');
 
 var app = express();
 

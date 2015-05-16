@@ -1,0 +1,31 @@
+doctype html
+html
+
+  include ./layouttop.jade
+
+  .container
+    .row 
+      .col-md-2.dark-teal.height500
+      .col-md-1.height500
+      .col-md-6.height500
+        h1#registerH Register Below
+        fieldset
+          form#loginForm(method='POST', action='/users/register')
+            .formfield
+              .input-group
+                input#inputText.form-control(type='text', name='username', placeholder='Username', aria-describedby='sizing-addon1')
+            br          
+            .formfield
+              .input-group
+                input#inputText.form-control(type='password', name='password', placeholder='Password', aria-describedby='sizing-addon1')
+            br
+            input.submitbutton(type='submit', value='Register Now!')
+      .col-md-1.height500
+      .col-md-2.dark-teal.height500
+    .row
+      .col-md-2.dark-teal.height106
+      .col-md-8.height106.rounded-border-bottom-right.rounded-border-bottom-left.white
+      .col-md-2.dark-teal.height106
+
+
+  include ./layoutbottom.jade

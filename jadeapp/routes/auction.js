@@ -6,4 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('auction', { title: 'Savings Multiplied' });
 });
 
+//Creating an item will need to go here. 
+
 module.exports = router;

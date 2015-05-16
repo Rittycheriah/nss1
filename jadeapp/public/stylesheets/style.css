@@ -1,7 +1,7 @@
-div {
+/*div {
   border: 1px solid black;
 }
-/*www.youtube.com/watch?v=5hARDXYz2io*/
+*/
 /*Dark Teal: #69C4CC
 Light Blue Text: #D5F1F0
 Medium Blue Text: #2A959E
@@ -12,9 +12,7 @@ Bright Purple: #6F308B
 Dark Purple: #6F1549
 Green (auction page form): #edf9d3
 Green (auction page text color): #8db639*/
-/*div {
-    border: 1px solid black;
-}*/
+
 /*Font*/
 
 body {
@@ -85,7 +83,7 @@ body {
 }
 
 .height500 {
-  height: 500px;
+  height: 520px;
 }
 
 .height875 {
@@ -231,12 +229,22 @@ a.btn {
 
 /*For Auction Pg*/
 .font-normal {
-      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.login {
+  display: inline-block;
+}
 
 /* for container */ 
 .container {
   width: 100% !important;
   padding: 0;
   margin: 0;
+}
+
+/*For Register Pg
+*/
+#registerH {
+ margin-bottom: 30px;
 }

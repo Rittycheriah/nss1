@@ -8,6 +8,7 @@ head
 
   //***** CUSTOM STYLESHEET
   link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/stylesheets/auction.css')
 
   //****** GOOGLE FONTS LINK
   link(href='http://fonts.googleapis.com/css?family=Corben:400,700', rel='stylesheet', type='text/css')
@@ -28,7 +29,11 @@ body
         .col-md-3
         .col-md-3
         .col-md-3
-          .user-links Sign In | Sign Up
+          .user-links 
+            p.login
+              a(href='/users/login') Sign In | 
+            p.login 
+              a(href='/users/register') Sign Up
     .col-md-2.light-teal.height44
   .row.light-teal
     .col-md-2.light-teal.height158

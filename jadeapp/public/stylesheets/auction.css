@@ -1,0 +1,34 @@
+/*Dark Teal: #69C4CC
+Light Blue Text: #D5F1F0
+Medium Blue Text: #2A959E
+Light Teal: #CFEFEE
+Bright Pink: #E9168C
+Light Pink: #F3CECD
+Bright Purple: #6F308B
+Dark Purple: #6F1549
+Green (auction page form): #edf9d3
+Green (auction page text color): #8db639*/
+
+.topOfForm {
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+
+.auctionForm {
+	background-color: #edf9d3 !important;
+	color: #8db639 !important;
+}
+
+.height750 {
+	height: 750px;
+}
+
+input {
+	padding: 0;
+	margin: 0;
+}
+
+.bottomOfForm {
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
