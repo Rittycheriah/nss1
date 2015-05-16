@@ -54,14 +54,17 @@ app.post('/login', function(req, res) {
     .then(function (validUser) {
       console.log('back in route handling user obj.');
       console.log('validUser =', validUser);
-      res.render('auction');
+      // res.redirect('/auction');
+      res.render("auction");
+
     })
 
   //Database call made, but failed
-  // .fail(function (err) {
-  //   console.log('Failed to look up user');
-  //   sendError(req, res, {errors: err.message}, 'Failed Hard')
-  // })
+   // .fail(function (err) {
+   //  console.log(err);
+   //   console.log('Failed to look up user');
+   //   sendError(req, res, {errors: err.message}, 'Failed Hard')
+   // })
 });
 
 module.exports = app;

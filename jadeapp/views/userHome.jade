@@ -1,0 +1,22 @@
+doctype html
+html
+
+  include ./layouttop.jade
+
+  .container
+    .row 
+      .col-md-2.dark-teal.height500
+      .col-md-1.height500
+      .col-md-6.height500
+        h1 Welcome #{user}
+        h6 You have #{itemLength} auction items total.
+
+      .col-md-1.height500
+      .col-md-2.dark-teal.height500
+    .row
+      .col-md-2.dark-teal.height106
+      .col-md-8.height106.rounded-border-bottom-right.rounded-border-bottom-left.white
+      .col-md-2.dark-teal.height106
+
+
+  include ./layoutbottom.jade

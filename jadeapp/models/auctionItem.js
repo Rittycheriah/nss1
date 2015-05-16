@@ -2,15 +2,17 @@
 
 var mongoose = require('mongoose');
 
-var auctionItem = mongoose.Schema({
+var auctionSchema = mongoose.Schema({
 	title: {type: String, required: true, default: ''},
   type: {type: String, required: true, default: ''},
   size: {type: String, required: true, default: ''}, 
   season: {type: String, required: true, default: ''},
   condition: {type: String, required: true, default: ''},
-  brand: {type: String, required: true, default: ''}
+  image: {type: String, required: true, default: ''},
+  brand: {type: String, required: true, default: ''},
+  user: {type: String, required: true}
 });
 
-var AuctionModel = require("../models/user");
+var auctionModel = mongoose.model('auctionItem', auctionSchema);
 
-module.exports = auctionItem;
+module.exports = auctionModel;
