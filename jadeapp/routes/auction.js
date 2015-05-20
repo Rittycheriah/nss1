@@ -42,8 +42,13 @@ var sendAuctionItems = function (req, res, err, message) {
 
 /* GET auction page. */
 router.get('/', function(req, res, next) {
-  console.log("from controller: " + UserController.getCurrentUser());
-  res.render('auction', { title: 'Savings Multiplied' });
+  auctionModel.find({}, function(err, items) {
+  console.log('this is from the auction get', items); 
+  res.render('auction', { 
+    title: 'Savings Multiplied',
+    items: items
+    });    
+  });
 });
 
 
@@ -71,7 +76,8 @@ router.get('/createItem', function (req, res, next) {
       season: '', 
       condition: '', 
       image: '', 
-      brand: ''
+      brand: '', 
+      db_id: ''
     }   
   });
 });
@@ -100,10 +106,10 @@ router.get('/:id', function (req, res) {
 })
 
 //POST create item page OR edit page
-router.post('/createItem', function (req, res, next) {
+router.post('/createItem', function (req, res) {
 
   //User is editing an existing item
-  if (req.body.db_id !== "") {
+  if (req.body.db_id !== "" || req.body.db_id !== "undefined") {
 
     //Find it
     auctionModel.findOne({ _id: req.body.db_id}, function (err, foundAuction) {
@@ -125,7 +131,7 @@ router.post('/createItem', function (req, res, next) {
         if (err) {
           sendError(req, res, err, "could not save task with updated info");
         } else {
-          res.redirect('/auction/profile');
+          res.render('/auction/profile');
         }
       });
     });

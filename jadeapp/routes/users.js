@@ -26,7 +26,7 @@ app.get("/register", function(req, res) {
 //Handle the post request from the registration form 
 app.post('/register', function(req, res) {
   var newUser = new UserModel(req.body);
-  console.log('here is the new user', newUser)
+  console.log('here is the new user', newUser);
 
   newUser.save(function(err, user) {
     console.log('going to the redirect');
@@ -55,9 +55,8 @@ app.post('/login', function(req, res) {
       console.log('back in route handling user obj.');
       console.log('validUser =', validUser);
       // res.redirect('/auction');
-      res.render("auction");
-
-    })
+      res.redirect("/auction");
+    });
 
   //Database call made, but failed
    // .fail(function (err) {
