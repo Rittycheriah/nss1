@@ -21,11 +21,6 @@ var sendAuctionItems = function (req, res, err, message) {
   var theUser = UserController.getCurrentUser();
 
   auctionModel.find({}, function(err, auctionItems) {
- 
-   //Loop over the array and put in the username
-   for (var i = 0; i < auctionItems.length; i++) {
-    auctionItems[i].user = theUser.username;
-   }
 
    if (err) {
     console.log(err);
@@ -33,7 +28,6 @@ var sendAuctionItems = function (req, res, err, message) {
    } else {
     res.render('userHome', {
       user: theUser.username, 
-      itemLength: auctionItems.length,
       auctionItems: auctionItems
     });
    }
@@ -105,12 +99,48 @@ router.get('/:id', function (req, res) {
   })
 })
 
-//POST create item page OR edit page
+// Kate's version
+// router.post('/createItem', function (req, res) {
+//    var theUser = UserController.getCurrentUser();
+
+//     //Find it
+//     auctionModel.findOne({ _id: req.body.db_id}, function (err, auction) {
+
+//       if (err) {
+//         console.log(err);
+//         sendError(req, res, err, 'Could not find that task');
+//       }
+
+//       if (!auction) {
+//         auction = new auctionModel();
+//         auction.user = theUser.username;
+//       }
+//         auction.title = req.body.title;
+//         auction.type = req.body.type;
+//         auction.size = req.body.size;
+//         auction.season = req.body.season;
+//         auction.condition = req.body.condition;
+//         auction.image = req.body.image;
+//         auction.brand = req.body.brand;
+      
+
+//       //Save it 
+//       auction.save(function (err, newOne) {
+//         if (err) {
+//           sendError(req, res, err, "could not save task with updated info");
+//         } else {
+//         res.redirect('/auction/profile');
+//         }
+//       });       
+//     })
+// });
+
+// POST create item page OR edit page
 router.post('/createItem', function (req, res) {
-
-  //User is editing an existing item
-  if (req.body.db_id !== "" || req.body.db_id !== "undefined") {
-
+  console.log(req.body);
+//   //User is editing an existing item
+  if (req.body.db_id !== 'undefined') {
+    console.log('hitting the update');
     //Find it
     auctionModel.findOne({ _id: req.body.db_id}, function (err, foundAuction) {
 
@@ -131,12 +161,15 @@ router.post('/createItem', function (req, res) {
         if (err) {
           sendError(req, res, err, "could not save task with updated info");
         } else {
-          res.render('/auction/profile');
+          res.redirect('/auction/profile');
         }
       });
     });
 
   } else {
+
+  console.log('hitting the create');
+
 	console.log('this is the req', req.body);
 	//Who is the user? 
 	var theUser = UserController.getCurrentUser();
@@ -145,7 +178,7 @@ router.post('/createItem', function (req, res) {
 
   //What did the user enter in the form? 
   var theFormPostData = req.body;
-  theFormPostData.user = theUser._id;
+  theFormPostData.user = theUser.username;
 
   console.log('theFormPostData', theFormPostData);
 
@@ -155,7 +188,7 @@ router.post('/createItem', function (req, res) {
     	if (err) {
         sendError(req, res, err, 'Failed to save task');
     	} else {
-    		res.redirect('/auction/profile');
+    		res.redirect('/auction');
     	}
     });
   }
