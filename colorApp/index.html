@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Color App</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href='/css/main.css'>
+</head>
+<!-- style='background-color:{{color}}'-->
+<body ng-app='myModule'>
+  <div class="row" ng-controller='colorController'>
+
+    <div ng-repeat='color in color' class="col-md-2" style="background: -webkit-radial-gradient({{color}}, white); background: -o-radial-gradient({{color}}, white); background: -moz-radial-gradient({{color}}, white); background: radial-gradient({{color}}, white);" >
+    	<h1>{{color}}</h1>
+    </div>
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/main.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

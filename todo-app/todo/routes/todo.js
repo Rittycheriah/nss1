@@ -118,7 +118,7 @@ router.post('/', function(req, res, next) {
       title: req.body.titletext,
       description: req.body.destext,
       priority: req.body.priority,
-      complete: req.body.complete
+      complete: false
     }).save(function(err, task) {
       console.log('saved');
       if (err) {
@@ -128,7 +128,7 @@ router.post('/', function(req, res, next) {
             status: "Not"
           }
         });
-        console.log(task);
+        console.log(err);
       } else {
       res.redirect('/todo');
     }
