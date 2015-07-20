@@ -1,0 +1,5 @@
+/Users/Rainu/nss2/secondHW/secondHW/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Rainu/nss2/secondHW/secondHW/bin/Debug/secondHW.exe.mdb
+/Users/Rainu/nss2/secondHW/secondHW/bin/Debug/secondHW.exe
+/Users/Rainu/nss2/secondHW/secondHW/obj/x86/Debug/secondHW.exe
+/Users/Rainu/nss2/secondHW/secondHW/obj/x86/Debug/secondHW.exe.mdb
